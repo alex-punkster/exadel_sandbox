@@ -1,0 +1,41 @@
+commit c6dd964e0881a4698dc97701435d6cb8b68d8e7d
+Merge: f933545 9e484bb
+Author: alex-punkster <98597318+alex-punkster@users.noreply.github.com>
+Date:   Mon Feb 14 20:59:53 2022 +0300
+
+    Merge pull request #2 from alex-punkster/dev
+    
+    Dev
+
+commit 9e484bbaa0f7a8d002e5ce4469ffe6b6cbba3a6e
+Merge: ec8dbfa 07f9e30
+Author: alex-punkster <98597318+alex-punkster@users.noreply.github.com>
+Date:   Mon Feb 14 20:59:18 2022 +0300
+
+    Merge pull request #1 from alex-punkster/alex-punkster-new_feature
+    
+    Alex punkster new feature
+
+commit 07f9e30d96fa233248dc963adf244292881144ab
+Author: alex-punkster <alex_punkster@tut.by>
+Date:   Mon Feb 14 09:55:59 2022 -0800
+
+    add gitignore
+
+commit 45a6e8f17a3e2e12c36ed682ec91a40efdd21a46
+Author: alex-punkster <alex_punkster@tut.by>
+Date:   Mon Feb 14 09:51:38 2022 -0800
+
+    new_feature
+
+commit ec8dbfa3eac8c10b940f888aee317b27f3611d95
+Author: alex-punkster <alex_punkster@tut.by>
+Date:   Mon Feb 14 09:42:51 2022 -0800
+
+    add test to dev
+
+commit f933545a026b51708b4c04a8ecc103ed33ced071
+Author: alex-punkster <alex_punkster@tut.by>
+Date:   Mon Feb 14 09:34:36 2022 -0800
+
+    initial commit
