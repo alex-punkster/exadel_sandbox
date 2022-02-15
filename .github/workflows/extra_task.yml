@@ -3,9 +3,7 @@ name: My-extra-task
 env:
  DEPLOY_VER: "deploy-version-${{github.sha}}"
  YEAR: 2022
- MONTH: February
- DAY_OF_THE_MONTH: Sunday
-
+ 
 on:
  push:
   branches:
@@ -29,6 +27,24 @@ jobs:
      run: echo "Hello from ${{env.DEPLOY_VER}}"
 
  extra-task2:
+  env:
+   MONTH: February
+  runs-on: ubuntu-latest
+  needs: [extra-task1]
+  
+  steps:
+  - name: Today is
+    run: date
+   
+  - name: Year&Month&day
+    env:
+     DAY_OF_THE_MONTH: Sunday
+    run: |
+     echo "Day - ${{env.DAY_OF_THE_MONTH}}"
+     echo "Month - ${{env.MONTH}}"
+     echo "Year - ${{env.YEAR}}"
+
+ extra-task3:
   runs-on: ubuntu-latest
   needs: [extra-task1]
   
