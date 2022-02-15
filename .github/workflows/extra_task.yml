@@ -43,17 +43,3 @@ jobs:
      echo "Day - ${{env.DAY_OF_THE_MONTH}}"
      echo "Month - ${{env.MONTH}}"
      echo "Year - ${{env.YEAR}}"
-
- extra-task3:
-  runs-on: ubuntu-latest
-  needs: [extra-task1]
-  
-  steps:
-  - name: Today is
-    run: date
-   
-  - name: Year&Month&day
-    run: |
-     echo "Day - ${{env.DAY_OF_THE_MONTH}}"
-     echo "Month - ${{env.MONTH}}"
-     echo "Year - ${{env.YEAR}}"
