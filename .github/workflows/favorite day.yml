@@ -1,0 +1,22 @@
+name: favorite day
+
+on:
+  workflow_dispatch:
+    inputs:
+     fday:
+        type: choice
+        description: what is your favorite day?
+        options: 
+        - monday
+        - tuesday
+        - wednesday
+        - thursday
+        - friday
+        - saturday
+        - sunday
+jobs:
+  favorite-day:
+    runs-on: ubuntu-latest
+    steps:
+    - name: favorite day of week
+      run: echo "My favorite day of week is ${{ github.event.inputs.fday }}"
