@@ -1,0 +1,43 @@
+name: My-extra-task
+
+env:
+ DEPLOY_VER: "deploy-version-${{github.sha}}"
+ YEAR: 2022
+ MONTH: February
+ DAY_OF_THE_MONTH: Sunday
+
+on:
+ push:
+  branches:
+   - master
+   
+jobs:
+ extra-task1:
+  runs-on: ubuntu-latest
+  
+  steps:
+   - name: Git clone my repo
+     uses: actions/checkout@v1
+     
+   - name: List all files
+     run: ls -la
+     
+   - name: Print log file
+     run: cat log.txt
+     
+   - name: Print deploy version variable
+     run: echo "Hello from ${{env.DEPLOY_VER}}"
+
+ extra-task2:
+  runs-on: ubuntu-latest
+  needs: [extra-task1]
+  
+  steps:
+  - name: Today is
+    run: date
+   
+  - name: Year&Month&day
+    run: |
+     echo "Day - ${{env.DAY_OF_THE_MONTH}}"
+     echo "Month - ${{env.MONTH}}"
+     echo "Year - ${{env.YEAR}}"
