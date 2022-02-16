@@ -21,7 +21,7 @@ jobs:
      run: ls -la
      
    - name: Print log file
-     run: cat log.txt
+     run: cat Task1/log.txt
      
    - name: Print deploy version variable
      run: echo "Hello from ${{env.DEPLOY_VER}}"
