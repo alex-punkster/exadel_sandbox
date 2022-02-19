@@ -20,3 +20,10 @@ Actions done:
 - Run this script without manual SSH connection
 
 **Server URL with page created by the script:** http://18.193.79.107
+
+##Extra task (optional)
+
+Actions done:
+- Created S3 bucket
+- Uploaded a screenshot of my web page
+- added this to my web page using its URL
