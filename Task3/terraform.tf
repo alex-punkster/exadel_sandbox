@@ -38,12 +38,29 @@ data "aws_subnet" "default" {
     values = ["Default_subnet"]
   }
 }
-
+#get ssh key name
+#-------------------------------------------------------------------------------
+data "aws_key_pair" "ssh_key" {
+  key_name = "MyKeyPair"
+  filter {
+    name   = "tag:Name"
+    values = ["MyKey"]
+  }
+}
+#get Ubuntu server private Ip
+#-------------------------------------------------------------------------------
+data "aws_instance" "Ubuntu" {
+  filter {
+    name = "tag:Name"
+    values = ["Task3 Ubuntu Server"]
+  }
+}
 #create Ubuntu server
 #-------------------------------------------------------------------------------
 resource "aws_instance" "Ubuntu" {
   ami                    = data.aws_ami.Ubuntu.image_id #put ami id
   instance_type          = "t2.micro"
+  key_name               = data.aws_key_pair.ssh_key.key_name
   vpc_security_group_ids = [aws_security_group.Ubuntu_security.id] #attach security group
   user_data              = file("script.sh") #run script in VM
   tags = {
@@ -55,6 +72,7 @@ resource "aws_instance" "Ubuntu" {
 resource "aws_instance" "Amazon_Linux" {
   ami                    = data.aws_ami.Amazon_Linux.image_id #put ami id
   instance_type          = "t2.micro"
+  key_name               = data.aws_key_pair.ssh_key.key_name
   vpc_security_group_ids = [aws_security_group.Amazon_Linux.id] #attach security group
   tags = {
     Name = "Task3 Amazon_Linux Server"
@@ -80,7 +98,7 @@ resource "aws_security_group" "Ubuntu_security" {
       protocol    = "icmp"
       cidr_blocks = ["0.0.0.0/0"]
     }
-    
+
     egress {
       from_port   = 0
       to_port     = 0
