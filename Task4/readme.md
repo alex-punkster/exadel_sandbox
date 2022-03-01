@@ -3,8 +3,8 @@
 Actions done:
 1. Created EC2 instance, installed docker according to official documentation
 2. Downloaded a hello-world docker image form docker hub
-3.1 Created a dockerfile with apache web server for building a docker image. 
-3.2 Added an environment variable DEVOPS=alex_punkster to my docker image
+3.1. Created a dockerfile with apache web server for building a docker image. 
+3.2. Added an environment variable DEVOPS=alex_punkster to my docker image
 4. Created account at https://hub.docker.com/, created a repositoty and pushed my image to this repository
 5. Created a docker compose file to deploy containers with my app, java app (openjdk) and database (mongodb)
 
