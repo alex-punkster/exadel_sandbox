@@ -15,6 +15,7 @@ Actions done:
 1. Created a bash script for installing docker, tested it on my instance
 2. Edited a html page in interactive terminal of hello-world container
 3. For creating my Dockerfile clear OS image was used (Ubuntu 20.04)
-4.
-5.
+4. Modified my Dockerfile for printing environment variable at the web page
+5. Created a github action for automatic deployment of Docker image for each push
+6. Added env file for configure mongodb service and modified compose.yaml file
 
