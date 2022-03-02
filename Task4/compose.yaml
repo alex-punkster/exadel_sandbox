@@ -1,10 +1,16 @@
 version: '3'
 services:
 
-  app:
+  app1:
    build: .
+   deploy:
+    replicas: 5
    ports:
-    - 80:80
+    - 81:80
+    - 82:80
+    - 83:80
+    - 84:80
+    - 85:80
 
   java:
     image: openjdk
@@ -13,8 +19,7 @@ services:
     image: mongo
     ports:
      - 27017-27017
-    environment:
-     - MONGO_INITDB_ROOT_USERNAME=admin
-     - MONGO_INITDB_ROOT_PASSWORD=password
+    env_file:
+     - mongo.env
     depends_on:
      - java

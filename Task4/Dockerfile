@@ -15,7 +15,7 @@ ENV APACHE_RUN_DIR /var/www/html
 ENV APACHE_LOG_DIR /var/log/apache2
 ENV DEVOPS alex_punkster
 
-RUN echo 'DEVOPS alex_punkster' > /var/www/html/index.html
+RUN echo "DEVOPS "$DEVOPS"" > /var/www/html/index.html
 
 ENTRYPOINT ["/usr/sbin/apache2"]
 CMD ["-D", "FOREGROUND"]
