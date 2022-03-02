@@ -19,5 +19,5 @@ Actions done:
 5. Created a github action for automatic deployment of Docker image for each push
 6. Added env file for configuration mongodb service and modified compose.yaml file
 
-**Server URL with my web app:** http://18.194.234.237:81 
+**Server URL with my web app:** http://18.194.234.237:81 (any port 81-85)
 
