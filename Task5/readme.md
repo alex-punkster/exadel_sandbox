@@ -10,7 +10,7 @@ Actions done:
 Actions done:
 1. Created a playbook for installing Wordpress and Mariadb in docker
 2. Put all creds into yaml file with all variables
-3. 
+3. Installed Ansible AWS Dynamic Inventory, created IAM user for connection. Modified `ansible.cfg` file. Added tags to my instances for grouping EC2 resources with Dynamic Inventory. Modified my playbook and run it.
 
 **Server URLs with wordpress in docker, created by ansimble playbook:** http://3.69.52.177/ http://18.192.179.67/
 
