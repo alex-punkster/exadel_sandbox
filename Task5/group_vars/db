@@ -1,5 +1,0 @@
----
-MYSQL_ROOT_PASSWORD : root
-MYSQL_PASSWORD      : password
-MYSQL_DATABASE      : db
-MYSQL_USER          : mysqluser
