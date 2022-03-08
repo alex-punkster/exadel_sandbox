@@ -1,0 +1,5 @@
+---
+MYSQL_PASSWORD : password
+MYSQL_DATABASE : db
+MYSQL_USER     : mysqluser
+MYSQL_HOST     : mariadb

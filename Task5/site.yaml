@@ -1,0 +1,8 @@
+---
+- name: hosts
+  hosts: my_servers
+  vars_files:
+   - /home/ubuntu/ansible/web/vars/my_vars.yaml
+  become: true
+
+

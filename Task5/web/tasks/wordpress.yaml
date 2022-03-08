@@ -1,10 +1,10 @@
 ---
 - name: install WP
   gather_facts: false
-  hosts: tag_Type_PROD
+  hosts: my_servers
   become: yes
   vars_files:
-   - vars/default.yaml
+   - /home/ubuntu/ansible/web/vars/my_vars.yaml
   vars:
    db_volume: mariadb
    wordpress: wordpress

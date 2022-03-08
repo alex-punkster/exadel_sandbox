@@ -1,7 +1,6 @@
 ---
 - name: install docker
-  gather_facts: false
-  hosts: tag_Type_PROD
+  hosts: my_servers
   become: yes
 
   tasks:
