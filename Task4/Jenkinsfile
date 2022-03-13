@@ -1,7 +1,7 @@
 node {
     checkout scm
 
-    def customImage = docker.build("my-image:${env.BUILD_ID}", "Task4/Dockerfile")
+    def customImage = docker.build("my-image:${env.BUILD_ID}", "./Task4")
 
     customImage.inside {
         sh 'make test'
