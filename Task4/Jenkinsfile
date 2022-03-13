@@ -2,7 +2,9 @@ node {
     checkout scm
 
     def customImage = docker.build("my-image:${env.BUILD_ID}", "./Task4")
+    customImage.save("some_file")
+    
     stage('write artifact') {
-        archiveArtifacts artifacts: customImage
+        archiveArtifacts artifacts: "some_file"
     }
 }
