@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                docker.build("Dockerfile")
+                sh 'service apache2 status'
             }
         }
     }
