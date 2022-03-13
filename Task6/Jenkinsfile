@@ -1,0 +1,15 @@
+pipeline {
+    agent { dockerfile { filename 'Task4/Dockerfile' } }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version > generatedFile.txt'
+            }
+        }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: 'generatedFile.txt', onlyIfSuccessful: true
+        }
+    }
+}
