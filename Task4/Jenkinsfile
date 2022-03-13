@@ -1,10 +1,10 @@
 pipeline {
-    agent any
-
+    agent { dockerfile true }
     stages {
-        stage('Build image') {         
-       
-            app = docker.build("Dockerfile")    
-       }  
+        stage('Test') {
+            steps {
+                app = docker.build("Dockerfile")
+            }
+        }
     }
 }
