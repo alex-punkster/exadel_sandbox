@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'service apache2 status'
+                sh 'node --version'
             }
         }
     }
