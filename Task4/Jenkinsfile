@@ -1,17 +1,9 @@
-pipeline {
-    agent { dockerfile { filename 'Task4/Dockerfile' } }
-    stages {
-        stage('Test') {
-            steps {
-                sh 'node --version'
-                sh "docker images"
-                sh 'echo "artifact file" > generatedFile.txt'
-            }
-        }
-    }
-    post {
-        always {
-            archiveArtifacts artifacts: 'generatedFile.txt', onlyIfSuccessful: true
-        }
+node {
+    checkout scm
+
+    def customImage = docker.build("my-image:${env.BUILD_ID}")
+
+    customImage.inside {
+        sh 'make test'
     }
 }
