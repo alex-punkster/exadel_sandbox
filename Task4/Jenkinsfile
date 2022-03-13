@@ -1,10 +1,15 @@
-node {
-    checkout scm
-
-    def customImage = docker.build("my-image:${env.BUILD_ID}", "./Task4")
-    customImage.save("some_file")
-    
-    stage('write artifact') {
-        archiveArtifacts artifacts: "some_file"
+pipeline {
+    agent { dockerfile { filename 'Task4/Dockerfile' } }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version > generatedFile.txt'
+            }
+        }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: 'generatedFile.txt', onlyIfSuccessful: true
+        }
     }
 }
