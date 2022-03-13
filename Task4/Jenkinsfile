@@ -1,0 +1,11 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('show all containers') {
+            steps {
+                sh "docker build -t my_app:1.0 ."
+            }
+        }
+    }
+}
