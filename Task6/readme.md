@@ -11,6 +11,6 @@ Actions done:
    - configured Jenkins for using this docker container as build agent
 4. Run a freestyle project with bash command `date` inside, run the project on both agents
 5. Created a pipeline which will execute docker ps -a in docker agent, running on Jenkins master’s Host.
-![Result](https://alex-punkster-bucket.s3.eu-central-1.amazonaws.com/image_2022_03_12T14_53_35_633Z.png)
+![Result](https://alex-punkster-bucket.s3.eu-central-1.amazonaws.com/image1.png)
 7. Created a pipeline which build image from my Dockerfile and put artifact to file
 ![Result](https://alex-punkster-bucket.s3.eu-central-1.amazonaws.com/image2.png)
