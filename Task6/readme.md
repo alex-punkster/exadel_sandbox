@@ -2,6 +2,9 @@
 
 Actions done:
 1. Installed Jenkins in docker container, according to official documentation
+   - download and run `docker:dind` image
+   - created a Dockerfile with Jenkins image
+   - run image from my Dockerfile as a container
 2. Installed a Docker plugin, configured two agents using this plugin
 3. Run a freestyle project with bash command `date` inside, run the project on both agents
 4. Created a pipeline which will execute docker ps -a in docker agent, running on Jenkins master’s Host.
