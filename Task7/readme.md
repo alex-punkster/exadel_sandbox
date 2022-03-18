@@ -16,5 +16,12 @@ actions done:
 2. Prepare a docker-compose file which include: elasticsearch, logstash, kibana
 3. Configure Kibana in web GUI for log collection
 ![Result](https://user-images.githubusercontent.com/98597318/158998707-b5248834-5265-4440-9f9f-3c12eb566bd3.png)
-4. Modified my docker-compose file adding Metricbeat for getting metrics from my running containers
+4. Modified my docker-compose file adding Metricbeat for getting metrics from my running containers. Configure Metricbeat in Web GUI
 ![Result](https://github.com/alex-punkster/exadel_sandbox/blob/master/Task7/img/kibana.png?raw=true)
+
+- Grafana
+actions done:
+1. Modify my docker-compose file adding Grafana installation section
+2. Run Grafana in web browser, add data source - elasticsearch
+3. Set up my own dashboard in grafana
+![Result](https://github.com/alex-punkster/exadel_sandbox/blob/master/Task7/img/grafana.png?raw=true)
