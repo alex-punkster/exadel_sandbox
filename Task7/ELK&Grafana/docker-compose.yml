@@ -14,7 +14,7 @@ services:
       - discovery.type=single-node
       - xpack.security.enabled=false
 
-#Install elasticsearch
+#Install logstash
   logstash:
     image: docker.elastic.co/logstash/logstash:7.1.1
     depends_on: 
