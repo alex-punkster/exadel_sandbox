@@ -12,6 +12,9 @@ actions done:
 
 - ELK
 actions done:
-1. Prepare a docker-compose file which include: elasticsearch, logstash, kibana
-2. Configure Kibana in web GUI for log collection
-![Result](![image](https://user-images.githubusercontent.com/98597318/158998707-b5248834-5265-4440-9f9f-3c12eb566bd3.png))
+1. Prepare VM with Ubuntu 20.04 on my PC
+2. Prepare a docker-compose file which include: elasticsearch, logstash, kibana
+3. Configure Kibana in web GUI for log collection
+![Result](https://user-images.githubusercontent.com/98597318/158998707-b5248834-5265-4440-9f9f-3c12eb566bd3.png)
+4. Modified my docker-compose file adding Metricbeat for getting metrics from my running containers
+![Result](https://github.com/alex-punkster/exadel_sandbox/blob/master/Task7/img/kibana.png?raw=true)
