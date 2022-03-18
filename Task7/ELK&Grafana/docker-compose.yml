@@ -1,0 +1,57 @@
+version: '3'
+services:
+ 
+#Install grafana 
+  grafana:
+    image: grafana/grafana
+    ports:
+      - 3000:3000
+ 
+#Install elasticsearch
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.1.1
+    environment: 
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+
+#Install elasticsearch
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.1.1
+    depends_on: 
+      - elasticsearch
+    ports:
+      - 12201:12201/udp
+    volumes:
+      - ./logstash.conf:/usr/share/logstash/pipeline/logstash.conf:ro 
+
+#Install kibana
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.1.1
+    depends_on:
+      - logstash
+    ports: 
+      - 5601:5601
+
+
+#Install metricbeat
+  metricbeat:
+    build: .
+    container_name: metricbeat-metricbeat-services
+    command: -e
+    environment:
+      - "WAIT_FOR_HOSTS=elasticsearch:9200 kibana:5601"
+      - "HOST_ELASTICSEARCH=elasticsearch:9200"
+      - "HOST_KIBANA=kibana:5601"
+    depends_on:
+      - elasticsearch
+    
+
+#Install dejavu
+  dejavu:
+    image: appbaseio/dejavu:3.2.3
+    container_name: dejavu
+    ports:
+      - '1358:1358'
+    links:
+      - elasticsearch
+ 
