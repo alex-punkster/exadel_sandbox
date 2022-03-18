@@ -1,5 +1,6 @@
 ## Exadel sandbox Task 7
 
+- Zabbix
 Actions done:
 1. Prepare 1 instance for installing zabbix and 2 more instances with apache and nginx for monitoring, configure security groups
 2. Install zabbix 6.0 LTS according to official documentation
